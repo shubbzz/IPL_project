@@ -22,6 +22,7 @@ final_result = [['CSK', 0], ['DC', 0], ['GT', 0], ['KKR', 0], ['LSG', 0],
 for te in range(len(final_result)):
     team=final_result[te][0]
     pos = list()
+    pos_adv = list()
     present = 2
     count = 0
     result = list()
@@ -29,55 +30,55 @@ for te in range(len(final_result)):
     for x in range(0, iterr):
         table = list(i_table)
         # csk
-        table[0][1] = 3
-        table[0][2] = 0
-        table[0][3] = 3
-        table[0][4] = -1.251
+        table[0][1] = 13
+        table[0][2] = 4
+        table[0][3] = 9
+        table[0][4] = -0.206
         # dc
-        table[1][1] = 2
-        table[1][2] = 1
-        table[1][3] = 1
-        table[1][4] = 0.065
+        table[1][1] = 12
+        table[1][2] = 6
+        table[1][3] = 6
+        table[1][4] = 0.210
         # gt
-        table[2][1] = 2
-        table[2][2] = 2
-        table[2][3] = 0
-        table[2][4] = 0.495
+        table[2][1] = 13
+        table[2][2] = 10
+        table[2][3] = 3
+        table[2][4] = 0.391
         # kkr
-        table[3][1] = 3
-        table[3][2] = 2
-        table[3][3] = 1
-        table[3][4] = 0.843
+        table[3][1] = 13
+        table[3][2] = 6
+        table[3][3] = 7
+        table[3][4] = 0.160
         # lsg
-        table[4][1] = 3
-        table[4][2] = 2
-        table[4][3] = 1
-        table[4][4] = 0.193
+        table[4][1] = 13
+        table[4][2] = 8
+        table[4][3] = 5
+        table[4][4] = 0.262
         # mi
-        table[5][1] = 2
-        table[5][2] = 0
-        table[5][3] = 2
-        table[5][4] = -1.029
+        table[5][1] = 12
+        table[5][2] = 3
+        table[5][3] = 9
+        table[5][4] = -0.613
         # pbks
-        table[6][1] = 3
-        table[6][2] = 2
-        table[6][3] = 1
-        table[6][4] = 0.238
+        table[6][1] = 12
+        table[6][2] = 6
+        table[6][3] = 6
+        table[6][4] = 0.023
         # rcb
-        table[7][1] = 3
-        table[7][2] = 2
-        table[7][3] = 1
-        table[7][4] = 0.159
+        table[7][1] = 13
+        table[7][2] = 7
+        table[7][3] = 6
+        table[7][4] = -0.323
         # rr
-        table[8][1] = 3
-        table[8][2] = 2
-        table[8][3] = 1
-        table[8][4] = 1.218
+        table[8][1] = 13
+        table[8][2] = 8
+        table[8][3] = 5
+        table[8][4] = 0.304
         # srh
-        table[9][1] = 2
-        table[9][2] = 0
-        table[9][3] = 2
-        table[9][4] = -1.825
+        table[9][1] = 12
+        table[9][2] = 5
+        table[9][3] = 7
+        table[9][4] = -0.270
         cm = 0
         for inn in range(len(table)):
             cm += int(table[inn][1])
@@ -93,7 +94,7 @@ for te in range(len(final_result)):
             else:
                 looser = fixtures[i][2]
             for y in range(len(table)):
-                nrr = round(random.uniform(0, 3), 2)
+                nrr = round(random.uniform(0, 1), 2)
                 if table[y][0] == winner:
                     table[y][1] += 1
                     table[y][2] += 1
@@ -111,25 +112,30 @@ for te in range(len(final_result)):
             if i_table[kk][0] == team:
                 if kk < 4:
                     pos.append(int(1))
+                    if(kk<2):pos_adv.append(float(0.375))
+                    else:pos_adv.append(float(0.25))
                 else:
                     pos.append(int(0))
+                    pos_adv.append(float(0))
         i_table.sort(key=lambda vv: vv[0])
         curr = sum(pos) / len(pos)
-        print(round(curr, 3))
-        if present + (present * 0.05) >= round(curr, 3) >= present - (present * 0.05):
+        curr_adv = sum(pos_adv)/len(pos_adv)
+        # print(round(curr, 3))
+        if present + (present * 0.01) >= round(curr, 3) >= present - (present * 0.01):
             count += 1
         else:
             count = 1
             present = curr
-        if count == 2000:
+        if count == 10000:
             print("--------------------------------------->", count)
             print(x)
             final_result[te][1]=round(curr*100,1)
+            final_result[te].append(round(curr_adv * 100, 1))
             break
 final_result.sort(reverse=True,key=lambda vv: vv[1])
 sum=0
 for te in range(len(final_result)):
-    print(str(final_result[te][0])+ "--->" +str(final_result[te][1]))
+    print(str(final_result[te][0])+ "--->" +str(final_result[te][1]) + "----" + str(final_result[te][2]))
     sum+=final_result[te][1]
 print(sum)
 # for x in range(len(result)):
