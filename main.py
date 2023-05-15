@@ -3,20 +3,20 @@ import random
 i_table = [['CSK', 0, 0, 0, 0], ['DC', 0, 0, 0, 0], ['GT', 0, 0, 0, 0], ['KKR', 0, 0, 0, 0], ['LSG', 0, 0, 0, 0],
            ['MI', 0, 0, 0, 0], ['PBKS', 0, 0, 0, 0], ['RCB', 0, 0, 0, 0], ['RR', 0, 0, 0, 0], ['SRH', 0, 0, 0, 0]]
 i = 1
-fixtures = [[1, 'CSK', 'KKR'], [2, 'DC', 'MI'], [3, 'PBKS', 'RCB'], [4, 'GT', 'LSG'], [5, 'SRH', 'RR'],
-            [6, 'RCB', 'KKR'], [7, 'CSK', 'LSG'], [8, 'KKR', 'PBKS'], [9, 'MI', 'RR'], [10, 'GT', 'DC'],
-            [11, 'CSK', 'PBKS'], [12, 'SRH', 'LSG'], [13, 'RCB', 'RR'], [14, 'KKR', 'MI'], [15, 'DC', 'LSG'],
-            [16, 'PBKS', 'GT'], [17, 'CSK', 'SRH'], [18, 'RCB', 'MI'], [19, 'DC', 'KKR'], [20, 'RR', 'LSG'],
-            [21, 'GT', 'SRH'], [22, 'CSK', 'RCB'], [23, 'PBKS', 'MI'], [24, 'RR', 'GT'], [25, 'KKR', 'SRH'],
-            [26, 'MI', 'LSG'], [27, 'RCB', 'DC'], [28, 'PBKS', 'SRH'], [29, 'CSK', 'GT'], [30, 'RR', 'KKR'],
-            [31, 'RCB', 'LSG'], [32, 'DC', 'PBKS'], [33, 'CSK', 'MI'], [34, 'DC', 'RR'], [35, 'GT', 'KKR'],
-            [36, 'RCB', 'SRH'], [37, 'MI', 'LSG'], [38, 'PBKS', 'CSK'], [39, 'RR', 'RCB'], [40, 'GT', 'SRH'],
-            [41, 'KKR', 'DC'], [42, 'PBKS', 'LSG'], [43, 'RCB', 'GT'], [44, 'RR', 'MI'], [45, 'LSG', 'DC'],
-            [46, 'SRH', 'CSK'], [47, 'RR', 'KKR'], [48, 'GT', 'PBKS'], [49, 'CSK', 'RCB'], [50, 'DC', 'SRH'],
-            [51, 'MI', 'GT'], [52, 'PBKS', 'RR'], [53, 'KKR', 'LSG'], [54, 'SRH', 'RCB'], [55, 'DC', 'CSK'],
-            [56, 'MI', 'KKR'], [57, 'GT', 'LSG'], [58, 'RR', 'DC'], [59, 'MI', 'CSK'], [60, 'RCB', 'PBKS'],
-            [61, 'SRH', 'KKR'], [62, 'CSK', 'GT'], [63, 'RR', 'LSG'], [64, 'PBKS', 'DC'], [65, 'SRH', 'MI'],
-            [66, 'KKR', 'LSG'], [67, 'GT', 'RCB'], [68, 'RR', 'CSK'], [69, 'DC', 'MI'], [70, 'SRH', 'PBKS']]
+fixtures = [[1, 'CSK', 'GT'], [2, 'PBKS', 'KKR'], [3, 'LSG', 'DC'], [4, 'SRH', 'RR'], [5, 'RCB', 'MI'],
+            [6, 'CSK', 'LSG'], [7, 'DC', 'GT'], [8, 'RR', 'PBKS'], [9, 'KKR', 'RCB'], [10, 'LSG', 'SRH'],
+            [11, 'RR', 'DC'], [12, 'MI', 'CSK'], [13, 'GT', 'KKR'], [14, 'SRH', 'PBKS'], [15, 'RCB', 'LSG'],
+            [16, 'DC', 'MI'], [17, 'CSK', 'RR'], [18, 'PBKS', 'GT'], [19, 'KKR', 'SRH'], [20, 'RCB', 'DC'],
+            [21, 'LSG', 'PBKS'], [22, 'MI', 'KKR'], [23, 'GT', 'RR'], [24, 'RCB', 'CSK'], [25, 'SRH', 'MI'],
+            [26, 'RR', 'LSG'], [27, 'PBKS', 'RCB'], [28, 'DC', 'KKR'], [29, 'CSK', 'SRH'], [30, 'LSG', 'GT'],
+            [31, 'MI', 'PBKS'], [32, 'RCB', 'RR'], [33, 'KKR', 'CSK'], [34, 'SRH', 'DC'], [35, 'GT', 'MI'],
+            [36, 'RCB', 'KKR'], [37, 'RR', 'CSK'], [38, 'PBKS', 'LSG'], [39, 'KKR', 'GT'], [40, 'DC', 'SRH'],
+            [41, 'CSK', 'PBKS'], [42, 'MI', 'RR'], [43, 'LSG', 'RCB'], [44, 'GT', 'DC'], [45, 'PBKS', 'MI'],
+            [46, 'LSG', 'CSK'], [47, 'SRH', 'KKR'], [48, 'RR', 'GT'], [49, 'CSK', 'MI'], [50, 'DC', 'RCB'],
+            [51, 'GT', 'LSG'], [52, 'RR', 'SRH'], [53, 'KKR', 'PBKS'], [54, 'MI', 'RCB'], [55, 'CSK', 'DC'],
+            [56, 'KKR', 'RR'], [57, 'MI', 'GT'], [58, 'SRH', 'LSG'], [59, 'DC', 'PBKS'], [60, 'RR', 'RCB'],
+            [61, 'CSK', 'KKR'], [62, 'GT', 'SRH'], [63, 'LSG', 'MI'], [64, 'PBKS', 'DC'], [65, 'SRH', 'RCB'],
+            [66, 'PBKS', 'RR'], [67, 'DC', 'CSK'], [68, 'KKR', 'LSG'], [69, 'MI', 'SRH'], [70, 'RCB', 'GT']]
 final_result = [['CSK', 0], ['DC', 0], ['GT', 0], ['KKR', 0], ['LSG', 0],
            ['MI', 0], ['PBKS', 0], ['RCB', 0], ['RR', 0], ['SRH', 0]]
 for te in range(len(final_result)):
@@ -31,54 +31,54 @@ for te in range(len(final_result)):
         table = list(i_table)
         # csk
         table[0][1] = 13
-        table[0][2] = 4
-        table[0][3] = 9
-        table[0][4] = -0.206
+        table[0][2] = 7.5
+        table[0][3] = 5.5
+        table[0][4] = 0.381
         # dc
         table[1][1] = 12
-        table[1][2] = 6
-        table[1][3] = 6
-        table[1][4] = 0.210
+        table[1][2] = 4
+        table[1][3] = 8
+        table[1][4] = -0.686
         # gt
         table[2][1] = 13
-        table[2][2] = 10
-        table[2][3] = 3
-        table[2][4] = 0.391
+        table[2][2] = 8
+        table[2][3] = 5
+        table[2][4] = 0.761
         # kkr
         table[3][1] = 13
         table[3][2] = 6
         table[3][3] = 7
-        table[3][4] = 0.160
+        table[3][4] = -0.256
         # lsg
-        table[4][1] = 13
-        table[4][2] = 8
-        table[4][3] = 5
-        table[4][4] = 0.262
+        table[4][1] = 12
+        table[4][2] = 6.5
+        table[4][3] = 5.5
+        table[4][4] = 0.309
         # mi
         table[5][1] = 12
-        table[5][2] = 3
-        table[5][3] = 9
-        table[5][4] = -0.613
+        table[5][2] = 7
+        table[5][3] = 5
+        table[5][4] = -0.117
         # pbks
         table[6][1] = 12
         table[6][2] = 6
         table[6][3] = 6
-        table[6][4] = 0.023
+        table[6][4] = -0.268
         # rcb
-        table[7][1] = 13
-        table[7][2] = 7
+        table[7][1] = 12
+        table[7][2] = 6
         table[7][3] = 6
-        table[7][4] = -0.323
+        table[7][4] = 0.166
         # rr
         table[8][1] = 13
-        table[8][2] = 8
-        table[8][3] = 5
-        table[8][4] = 0.304
+        table[8][2] = 6
+        table[8][3] = 7
+        table[8][4] = 0.140
         # srh
         table[9][1] = 12
         table[9][2] = 5
         table[9][3] = 7
-        table[9][4] = -0.270
+        table[9][4] = -0.471
         cm = 0
         for inn in range(len(table)):
             cm += int(table[inn][1])
@@ -135,9 +135,14 @@ for te in range(len(final_result)):
 final_result.sort(reverse=True,key=lambda vv: vv[1])
 sum=0
 for te in range(len(final_result)):
-    print(str(final_result[te][0])+ "--->" +str(final_result[te][1]) + "----" + str(final_result[te][2]))
     sum+=final_result[te][1]
 print(sum)
+sumz=0
+sum-=400
+for te in range(len(final_result)):
+    print(str(final_result[te][0])+ "--->" +str(round(final_result[te][1]*(1-sum/400),2)) + "----" + str(final_result[te][2]))
+    sumz+=final_result[te][1]*(1-sum/400)
+print(sumz)
 # for x in range(len(result)):
 #     if(result[x]<=result[-1]+(result[-1]*0.005)) and (result[x]>=result[-1]-(result[-1]*0.005)) :
 #         print(x)
